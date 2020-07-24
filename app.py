@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from deposit_funds import deposit_funds
-from deposit_funds import get_deposit_account
-import requests
+
+
 app = Flask(__name__)
 
 @app.route("/", methods = ['GET'] )
