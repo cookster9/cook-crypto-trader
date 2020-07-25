@@ -10,7 +10,8 @@ def func():
 
 @app.route("/deposit", methods = ['GET'])
 def deposit_function():
-    resp = deposit_funds()
+    amount = 10
+    resp = deposit_funds(amount)
     #resp = get_deposit_account()
     return jsonify(resp)
 
