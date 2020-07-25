@@ -44,13 +44,14 @@ def get_deposit_account(cbpro_client):
 
 
     for account in bank_accounts:
-        if type(account) is str:
-            sys.stdout.write(account)
-            account = json.loads(account)
-        # This assumes that there is only one ACH bank account connected
-        if type(account) is dict:
-            accountout = json.dumps(account)
-            sys.stdout.write(accountout)
+        if account: 
+            if type(account) is str:
+                sys.stdout.write(account)
+                account = json.loads(account)
+            # This assumes that there is only one ACH bank account connected
+            if type(account) is dict:
+                accountout = json.dumps(account)
+                sys.stdout.write(accountout)
             if account.get("type") == 'ach_bank_account':
                 return account
 
