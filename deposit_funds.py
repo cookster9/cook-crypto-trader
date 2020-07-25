@@ -39,6 +39,8 @@ def get_deposit_account(cbpro_client):
     bank_accounts = cbpro_client.get_payment_methods()
     sys.stdout.write("Bank account type: "+type(bank_accounts).__name__)
     if type(bank_accounts) is dict:
+        bankout = json.dumps(bank_accounts)
+        sys.stdout.write(bankout)
         if bank_accounts.get("type") == 'ach_bank_account':
             return bank_accounts
 
