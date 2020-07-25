@@ -1,6 +1,8 @@
 from cbpro_client import cbpro_client
 from logger import logger
 import json
+import sys
+import string
 
 @cbpro_client
 def get_deposit_account(cbpro_client):
@@ -35,7 +37,7 @@ def get_deposit_account(cbpro_client):
     """
 
     bank_accounts = cbpro_client.get_payment_methods()
-    
+    sys.stdout.write("Bank account type: "+type(bank_accounts).__name__)
     if type(bank_accounts) is dict:
         if bank_accounts.get("type") == 'ach_bank_account':
             return bank_accounts
@@ -43,9 +45,12 @@ def get_deposit_account(cbpro_client):
 
     for account in bank_accounts:
         if type(account) is str:
+            sys.stdout.write(account)
             account = json.loads(account)
         # This assumes that there is only one ACH bank account connected
         if type(account) is dict:
+            accountout = json.dumps(account)
+            sys.stdout.write(accountout)
             if account.get("type") == 'ach_bank_account':
                 return account
 
