@@ -37,7 +37,7 @@ def get_deposit_account(cbpro_client):
 
     for account in bank_accounts:
         # This assumes that there is only one ACH bank account connected
-        if account['type'] == 'ach_bank_account':
+        if account.get("type") == 'ach_bank_account':
             return account
 
 
