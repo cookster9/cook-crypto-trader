@@ -7,7 +7,7 @@ import string
 @cbpro_client
 @logger
 def check_stats(cbpro_client, logger, product = 'BTC-USD'):
-    """ Makes deposit into USD Wallet
+    """ Check stats of a pair
 
     Params: 
         - product (pair): string default BTC-USD
