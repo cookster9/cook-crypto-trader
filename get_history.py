@@ -3,7 +3,7 @@ from logger import logger
 import json
 import sys
 import string
-import datetime
+from datetime import datetime, timedelta
 
 
 @cbpro_client
