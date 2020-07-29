@@ -3,3 +3,5 @@ venv
 *.pyo
 *.pyc
 *.log
+*.suo
+/.vs
