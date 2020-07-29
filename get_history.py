@@ -21,7 +21,7 @@ def get_history(cbpro_client, logger, product = 'BTC-USD'):
         ...
         ]
     """
-    startTime = (datetime.datetime.now() - timedelta(minutes=600)).isoformat()
-    endTime = datetime.datetime.now().isoformat()
+    startTime = (datetime.now() - timedelta(minutes=600)).isoformat()
+    endTime = datetime.now().isoformat()
     btc_history = cbpro_client.get_product_historic_rates(product, granularity = 300, start = startTime, end = endTime)
     return btc_history
