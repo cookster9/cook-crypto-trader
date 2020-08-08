@@ -36,4 +36,4 @@ def check_stats(cbpro_client, logger, product = 'BTC-USD'):
     else:
         logger.info("Stats Response: {}".format(resp))
     
-    return resp     
+    return resp
